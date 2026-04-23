@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PollBooth - Modern Polling App</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <div class="logo">
+                <i class="fas fa-chart-bar"></i>
+                <h1>PollBooth</h1>
+            </div>
+            <p class="subtitle">Create polls, gather opinions, see instant results</p>
+        </header>
+
+        <main>
+            <!-- Create Poll Section -->
+            <section class="create-poll-section">
+                <div class="card">
+                    <div class="card-header">
+                        <h2><i class="fas fa-plus-circle"></i> Create New Poll</h2>
+                    </div>
+                    <div class="card-body">
+                        <form id="createPollForm">
+                            <div class="form-group">
+                                <label for="question">Poll Question</label>
+                                <input 
+                                    type="text" 
+                                    id="question" 
+                                    placeholder="What's your question?" 
+                                    required
+                                    maxlength="200"
+                                >
+                            </div>
+                            <div class="form-group">
+                                <label>Options (2-4 required)</label>
+                                <div id="optionsContainer">
+                                    <div class="option-input">
+                                        <input 
+                                            type="text" 
+                                            class="option-field" 
+                                            placeholder="Option 1" 
+                                            required
+                                        >
+                                        <button type="button" class="btn-icon remove-option" title="Remove option">
+                                            <i class="fas fa-times"></i>
+                                        </button>
+                                    </div>
+                                    <div class="option-input">
+                                        <input 
+                                            type="text" 
+                                            class="option-field" 
+                                            placeholder="Option 2" 
+                                            required
+                                        >
+                                        <button type="button" class="btn-icon remove-option" title="Remove option">
+                                            <i class="fas fa-times"></i>
+                                        </button>
+                                    </div>
+                                </div>
+                                <button type="button" id="addOptionBtn" class="btn btn-secondary">
+                                    <i class="fas fa-plus"></i> Add Option
+                                </button>
+                            </div>
+                            <button type="submit" class="btn btn-primary btn-block">
+                                <i class="fas fa-paper-plane"></i> Create Poll
+                            </button>
+                        </form>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Polls List Section -->
+            <section class="polls-section">
+                <div class="section-header">
+                    <h2><i class="fas fa-poll"></i> Active Polls</h2>
+                    <span id="pollCount" class="badge">0 polls</span>
+                </div>
+                <div id="pollsContainer">
+                    <div class="empty-state">
+                        <i class="fas fa-inbox"></i>
+                        <p>No polls yet. Create the first one!</p>
+                    </div>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <!-- Toast Notification -->
+    <div id="toast" class="toast">
+        <i class="fas fa-check-circle"></i>
+        <span id="toastMessage"></span>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
