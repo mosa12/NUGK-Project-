@@ -1,4 +1,4 @@
-# PollVault - Modern Polling Application
+# PollBooth - Modern Polling Application
 
 A real-time polling application with a modern, engaging UI where users can create polls, vote, and see instant visual results.
 
