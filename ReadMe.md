@@ -25,8 +25,3 @@ A real-time polling application with a modern, engaging UI where users can creat
 - Node.js (v14 or higher)
 - npm or yarn
 
-### Installation
-
-1. Clone or extract the project:
-```bash
-cd polling-app
